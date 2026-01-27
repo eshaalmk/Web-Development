@@ -1,9 +1,83 @@
 body {
   background-color: plum;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
-h1 {
+
+/* Header */
+header {
+  background-color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+header img {
+  width: 60px;
+}
+
+header h1 {
   color: blue;
+  margin: 5px 0;
 }
-p {
-  color: red;
+
+nav {
+  background-color: #ddd;
+  padding: 10px;
+  text-align: center;
 }
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+}
+
+nav a.active {
+  background-color: #999;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+
+/* Gallery */
+.gallery {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+}
+
+.gallery div {
+  background-color: white;
+  padding: 10px;
+}
+
+.gallery img {
+  width: 200px;
+  height: 250px;
+}
+
+/* Forms */
+form {
+  background-color: white;
+  width: 300px;
+  margin: 20px auto;
+  padding: 15px;
+}
+
+input, textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+/* Footer */
+footer {
+  background-color: white;
+  text-align: center;
+  padding: 10px;
+}
+
