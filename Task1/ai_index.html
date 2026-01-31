@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artisan Gallery | Contemporary Art Exhibition</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="nav">
+            <a href="#home" class="logo">
+                <i class="fas fa-palette"></i>
+                <span>Artisan</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#artists">Artists</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#signup">Join</a></li>
+                <li><a href="#feedback">Feedback</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <span class="hero-tag">Welcome to</span>
+                <h1 class="hero-title">Artisan Gallery</h1>
+                <p class="hero-subtitle">Where Contemporary Art Meets Timeless Beauty</p>
+                <div class="hero-buttons">
+                    <a href="#gallery" class="btn btn-primary">Explore Collection</a>
+                    <a href="#artists" class="btn btn-secondary">Meet Artists</a>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span>Scroll</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+        <!-- Gallery Section -->
+        <section id="gallery" class="gallery">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Our Collection</span>
+                    <h2 class="section-title">Featured Artworks</h2>
+                    <p class="section-subtitle">Discover masterpieces from renowned contemporary artists</p>
+                </div>
+                <div class="gallery-grid">
+                    <article class="gallery-item">
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=600&h=800&fit=crop" alt="Abstract Serenity">
+                            <div class="gallery-overlay">
+                                <i class="fas fa-expand"></i>
+                            </div>
+                        </div>
+                        <div class="gallery-info">
+                            <h3>Abstract Serenity</h3>
+                            <p>Elena Vasquez • 2024</p>
+                        </div>
+                    </article>
+                    <article class="gallery-item gallery-item-tall">
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?w=600&h=900&fit=crop" alt="Urban Dreams">
+                            <div class="gallery-overlay">
+                                <i class="fas fa-expand"></i>
+                            </div>
+                        </div>
+                        <div class="gallery-info">
+                            <h3>Urban Dreams</h3>
+                            <p>Marcus Chen • 2023</p>
+                        </div>
+                    </article>
+                    <article class="gallery-item">
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1549887534-1541e9326642?w=600&h=600&fit=crop" alt="Chromatic Waves">
+                            <div class="gallery-overlay">
+                                <i class="fas fa-expand"></i>
+                            </div>
+                        </div>
+                        <div class="gallery-info">
+                            <h3>Chromatic Waves</h3>
+                            <p>Sofia Andersson • 2024</p>
+                        </div>
+                    </article>
+                    <article class="gallery-item">
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=600&h=700&fit=crop" alt="Ethereal Light">
+                            <div class="gallery-overlay">
+                                <i class="fas fa-expand"></i>
+                            </div>
+                        </div>
+                        <div class="gallery-info">
+                            <h3>Ethereal Light</h3>
+                            <p>James Wright • 2023</p>
+                        </div>
+                    </article>
+                    <article class="gallery-item gallery-item-wide">
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=1200&h=600&fit=crop" alt="Midnight Symphony">
+                            <div class="gallery-overlay">
+                                <i class="fas fa-expand"></i>
+                            </div>
+                        </div>
+                        <div class="gallery-info">
+                            <h3>Midnight Symphony</h3>
+                            <p>Yuki Tanaka • 2024</p>
+                        </div>
+                    </article>
+                    <article class="gallery-item">
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1482160549825-59d1b23cb208?w=600&h=800&fit=crop" alt="Nature's Embrace">
+                            <div class="gallery-overlay">
+                                <i class="fas fa-expand"></i>
+                            </div>
+                        </div>
+                        <div class="gallery-info">
+                            <h3>Nature's Embrace</h3>
+                            <p>Elena Vasquez • 2023</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <!-- Artists Section -->
+        <section id="artists" class="artists">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Creative Minds</span>
+                    <h2 class="section-title">Featured Artists</h2>
+                    <p class="section-subtitle">Meet the visionaries behind our extraordinary collection</p>
+                </div>
+                <div class="artists-grid">
+                    <article class="artist-card">
+                        <div class="artist-image">
+                            <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=400&h=400&fit=crop" alt="Elena Vasquez">
+                        </div>
+                        <div class="artist-info">
+                            <h3>Elena Vasquez</h3>
+                            <span class="artist-specialty">Abstract Expressionist</span>
+                            <p>Elena's work explores the intersection of emotion and color, creating pieces that resonate with viewers on a deeply personal level.</p>
+                            <div class="artist-social">
+                                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                                <a href="#" aria-label="Website"><i class="fas fa-globe"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="artist-card">
+                        <div class="artist-image">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" alt="Marcus Chen">
+                        </div>
+                        <div class="artist-info">
+                            <h3>Marcus Chen</h3>
+                            <span class="artist-specialty">Contemporary Realist</span>
+                            <p>Marcus captures urban landscapes with stunning precision, finding beauty in the everyday architecture of modern cities.</p>
+                            <div class="artist-social">
+                                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                                <a href="#" aria-label="Website"><i class="fas fa-globe"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="artist-card">
+                        <div class="artist-image">
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop" alt="Sofia Andersson">
+                        </div>
+                        <div class="artist-info">
+                            <h3>Sofia Andersson</h3>
+                            <span class="artist-specialty">Mixed Media Artist</span>
+                            <p>Sofia combines traditional techniques with digital elements, creating unique pieces that bridge past and future.</p>
+                            <div class="artist-social">
+                                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                                <a href="#" aria-label="Website"><i class="fas fa-globe"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="artist-card">
+                        <div class="artist-image">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop" alt="James Wright">
+                        </div>
+                        <div class="artist-info">
+                            <h3>James Wright</h3>
+                            <span class="artist-specialty">Light Installation</span>
+                            <p>James transforms spaces with his innovative light installations, creating immersive experiences that captivate audiences.</p>
+                            <div class="artist-social">
+                                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                                <a href="#" aria-label="Website"><i class="fas fa-globe"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800&h=1000&fit=crop" alt="Gallery Interior">
+                        <div class="about-stats">
+                            <div class="stat">
+                                <span class="stat-number">500+</span>
+                                <span class="stat-label">Artworks</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">50+</span>
+                                <span class="stat-label">Artists</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">15</span>
+                                <span class="stat-label">Years</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-content">
+                        <span class="section-tag">Our Story</span>
+                        <h2 class="section-title">Celebrating Art Since 2009</h2>
+                        <p class="about-text">
+                            Artisan Gallery was founded with a singular vision: to create a space where contemporary art could flourish and connect with audiences in meaningful ways. 
+                        </p>
+                        <p class="about-text">
+                            Our mission is to showcase exceptional talent from around the world, fostering dialogue between artists and collectors while making art accessible to everyone.
+                        </p>
+                        <div class="about-features">
+                            <div class="feature">
+                                <i class="fas fa-eye"></i>
+                                <div>
+                                    <h4>Curated Excellence</h4>
+                                    <p>Every piece is carefully selected by our expert curators</p>
+                                </div>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-heart"></i>
+                                <div>
+                                    <h4>Artist Support</h4>
+                                    <p>We champion emerging and established artists equally</p>
+                                </div>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-users"></i>
+                                <div>
+                                    <h4>Community First</h4>
+                                    <p>Regular events, workshops, and educational programs</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Sign Up Section -->
+        <section id="signup" class="signup">
+            <div class="container">
+                <div class="signup-wrapper">
+                    <div class="signup-content">
+                        <span class="section-tag">Join Us</span>
+                        <h2 class="section-title">Become a Member</h2>
+                        <p>Get exclusive access to new collections, private viewings, and special events.</p>
+                        <ul class="benefits-list">
+                            <li><i class="fas fa-check"></i> Early access to new exhibitions</li>
+                            <li><i class="fas fa-check"></i> Members-only events and workshops</li>
+                            <li><i class="fas fa-check"></i> Monthly newsletter with art insights</li>
+                            <li><i class="fas fa-check"></i> 10% discount on all purchases</li>
+                        </ul>
+                    </div>
+                    <div class="signup-form-wrapper">
+                        <form class="form signup-form">
+                            <h3>Create Account</h3>
+                            <div class="form-group">
+                                <label for="signup-name">
+                                    <i class="fas fa-user"></i>
+                                    Full Name
+                                </label>
+                                <input type="text" id="signup-name" name="name" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="signup-email">
+                                    <i class="fas fa-envelope"></i>
+                                    Email Address
+                                </label>
+                                <input type="email" id="signup-email" name="email" placeholder="Enter your email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="signup-password">
+                                    <i class="fas fa-lock"></i>
+                                    Password
+                                </label>
+                                <input type="password" id="signup-password" name="password" placeholder="Create a password" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-full">
+                                <i class="fas fa-arrow-right"></i>
+                                Sign Up
+                            </button>
+                            <p class="form-footer">
+                                Already have an account? <a href="#login">Log in</a>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Feedback Section -->
+        <section id="feedback" class="feedback">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Your Voice Matters</span>
+                    <h2 class="section-title">Share Your Experience</h2>
+                    <p class="section-subtitle">Help us improve and continue delivering exceptional art experiences</p>
+                </div>
+                <div class="feedback-wrapper">
+                    <form class="form feedback-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="feedback-name">
+                                    <i class="fas fa-user"></i>
+                                    Your Name
+                                </label>
+                                <input type="text" id="feedback-name" name="name" placeholder="Enter your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="feedback-email">
+                                    <i class="fas fa-envelope"></i>
+                                    Email Address
+                                </label>
+                                <input type="email" id="feedback-email" name="email" placeholder="Enter your email" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="feedback-visit">
+                                    <i class="fas fa-calendar"></i>
+                                    Visit Type
+                                </label>
+                                <select id="feedback-visit" name="visit" required>
+                                    <option value="">Select visit type</option>
+                                    <option value="first">First Time Visitor</option>
+                                    <option value="returning">Returning Visitor</option>
+                                    <option value="member">Gallery Member</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="feedback-rating">
+                                    <i class="fas fa-star"></i>
+                                    Overall Rating
+                                </label>
+                                <select id="feedback-rating" name="rating" required>
+                                    <option value="">Rate your experience</option>
+                                    <option value="5">★★★★★ Exceptional</option>
+                                    <option value="4">★★★★☆ Very Good</option>
+                                    <option value="3">★★★☆☆ Good</option>
+                                    <option value="2">★★☆☆☆ Fair</option>
+                                    <option value="1">★☆☆☆☆ Poor</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="feedback-message">
+                                <i class="fas fa-comment"></i>
+                                Your Feedback
+                            </label>
+                            <textarea id="feedback-message" name="message" rows="5" placeholder="Tell us about your experience..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Submit Feedback
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <span class="section-tag">Get in Touch</span>
+                        <h2 class="section-title">Visit Our Gallery</h2>
+                        <p>We'd love to hear from you. Whether you're interested in a piece, want to collaborate, or just want to say hello.</p>
+                        
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h4>Location</h4>
+                                    <p>123 Art District Avenue<br>New York, NY 10001</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h4>Phone</h4>
+                                    <p>+1 (555) 123-4567</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4>Email</h4>
+                                    <p>hello@artisangallery.com</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div>
+                                    <h4>Hours</h4>
+                                    <p>Tue - Sun: 10:00 AM - 7:00 PM<br>Monday: Closed</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="social-links">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                        </div>
+                    </div>
+                    <div class="contact-map">
+                        <div class="map-placeholder">
+                            <i class="fas fa-map"></i>
+                            <p>Interactive Map</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#home" class="logo">
+                        <i class="fas fa-palette"></i>
+                        <span>Artisan</span>
+                    </a>
+                    <p>Celebrating contemporary art and fostering connections between artists and art enthusiasts since 2009.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#artists">Artists</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#shipping">Shipping</a></li>
+                        <li><a href="#returns">Returns</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe for updates on new exhibitions and events.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email" required>
+                        <button type="submit"><i class="fas fa-arrow-right"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Artisan Gallery. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
