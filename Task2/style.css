@@ -1,0 +1,88 @@
+body {
+    font-family: Arial;
+    text-align: center;
+    background: #f0f0f0;
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 20px 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#gameArea {
+    width: 600px;
+    height: 300px;
+    background: #d4f7d4;
+    border: 2px solid #333;
+    margin: 20px auto;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Shooter on left */
+#shooter {
+    position: absolute;
+    left: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: #8B4513;
+    border-radius: 50%;
+}
+
+/* Target on right */
+#target {
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    width: 50px;
+    height: 50px;
+    background: red;
+    border-radius: 50%;
+}
+
+/* Arrow */
+.arrow {
+    position: absolute;
+    width: 40px;
+    height: 4px;
+    background: #555;
+    left: 90px; /* Start from shooter's right side */
+}
+
+.buttons {
+    margin: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:disabled {
+    background: #999;
+    cursor: not-allowed;
+}
+
+#message {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #d00;
+    min-height: 25px;
+}

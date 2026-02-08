@@ -1,25 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-    #square {
-        width: 50px;
-        height: 50px;
-        background-color: green;
-        position: absolute;
-        left: 50px;
-        top: 50px;
-        transition: left 0.5s linear, top 0.5s linear;
-    }
-</style>
+    <title>Archery</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <h1>Archery Game</h1>
+    
+    <div class="stats">
+        <div>Score: <span id="score">0</span></div>
+        <div>Time: <span id="time">30</span>s</div>
+        <div>Level: <span id="level">1</span></div>
+    </div>
+    
+    <div id="gameArea">
+        <div id="shooter"></div>
+        <div id="target"></div>
+    </div>
+    
+    <div class="buttons">
+        <button id="shootBtn">SHOOT</button>
+        <button id="startBtn">START</button>
+        <button id="restartBtn" disabled>RESTART</button>
+    </div>
+    
+    <div id="message"></div>
 
-<div id="square"></div>
-
-<button onclick="startMovement()">Start</button>
-<button onclick="stopMovement()">Stop</button>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
