@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Precision Archery Pro</title>
+    <link rel="stylesheet" href="ai_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Overlay Screens -->
+    <div id="startScreen" class="overlay active">
+        <div class="overlay-content">
+            <div class="overlay-icon">
+                <i class="fas fa-bullseye"></i>
+            </div>
+            <h1>Precision Archery Pro</h1>
+            <p class="subtitle">A Minimalist Target Shooting Experience</p>
+            
+            <div class="game-stats-preview">
+                <div class="stat-preview">
+                    <i class="fas fa-clock"></i>
+                    <span>30 Second Challenge</span>
+                </div>
+                <div class="stat-preview">
+                    <i class="fas fa-trophy"></i>
+                    <span>Progressive Difficulty</span>
+                </div>
+                <div class="stat-preview">
+                    <i class="fas fa-crosshairs"></i>
+                    <span>Dynamic Target</span>
+                </div>
+            </div>
+            
+            <div class="controls-info">
+                <h3>Controls</h3>
+                <div class="control-item">
+                    <span class="key">CLICK</span>
+                    <span>or</span>
+                    <span class="key">SPACE</span>
+                    <span>to shoot</span>
+                </div>
+                <div class="control-item">
+                    <span class="key">P</span>
+                    <span>to pause</span>
+                </div>
+            </div>
+            
+            <button id="startButton" class="btn-primary">
+                <i class="fas fa-play"></i>
+                Start Challenge
+            </button>
+        </div>
+    </div>
+    
+    <div id="pauseScreen" class="overlay">
+        <div class="overlay-content">
+            <div class="overlay-icon">
+                <i class="fas fa-pause"></i>
+            </div>
+            <h1>Game Paused</h1>
+            <p class="subtitle">Take a breath, archer</p>
+            
+            <div class="current-stats">
+                <div class="current-stat">
+                    <span>Current Score</span>
+                    <span id="pauseScore" class="stat-value">0</span>
+                </div>
+                <div class="current-stat">
+                    <span>Time Remaining</span>
+                    <span id="pauseTime" class="stat-value">30s</span>
+                </div>
+            </div>
+            
+            <div class="pause-actions">
+                <button id="resumeButton" class="btn-secondary">
+                    <i class="fas fa-play"></i>
+                    Resume
+                </button>
+                <button id="restartButton" class="btn-outline">
+                    <i class="fas fa-redo"></i>
+                    Restart
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="gameOverScreen" class="overlay">
+        <div class="overlay-content">
+            <div class="overlay-icon">
+                <i class="fas fa-flag-checkered"></i>
+            </div>
+            <h1>Challenge Complete</h1>
+            <p class="subtitle">Your accuracy has been recorded</p>
+            
+            <div class="final-stats">
+                <div class="final-stat">
+                    <span>Final Score</span>
+                    <span id="finalScore" class="final-value">0</span>
+                </div>
+                <div class="final-stat">
+                    <span>Accuracy</span>
+                    <span id="finalAccuracy" class="final-value">0%</span>
+                </div>
+                <div class="final-stat">
+                    <span>Difficulty Reached</span>
+                    <span id="finalLevel" class="final-value">Level 1</span>
+                </div>
+            </div>
+            
+            <div class="game-over-actions">
+                <button id="playAgainButton" class="btn-primary">
+                    <i class="fas fa-redo"></i>
+                    Play Again
+                </button>
+                <button id="menuButton" class="btn-outline">
+                    <i class="fas fa-home"></i>
+                    Main Menu
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Game Interface -->
+    <div class="game-container">
+        <!-- Header Bar -->
+        <header class="game-header">
+            <div class="header-left">
+                <div class="game-logo">
+                    <i class="fas fa-bullseye"></i>
+                    <span>Precision Pro</span>
+                </div>
+            </div>
+            
+            <div class="header-center">
+                <div class="game-status" id="gameStatus">
+                    <div class="status-indicator"></div>
+                    <span>READY</span>
+                </div>
+            </div>
+            
+            <div class="header-right">
+                <button id="pauseMenuButton" class="icon-button">
+                    <i class="fas fa-pause"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Game HUD -->
+        <div class="game-hud">
+            <div class="hud-card">
+                <div class="hud-label">
+                    <i class="fas fa-trophy"></i>
+                    <span>SCORE</span>
+                </div>
+                <div class="hud-value" id="score">0</div>
+            </div>
+            
+            <div class="hud-card">
+                <div class="hud-label">
+                    <i class="fas fa-clock"></i>
+                    <span>TIME</span>
+                </div>
+                <div class="hud-value" id="timeLeft">30</div>
+            </div>
+            
+            <div class="hud-card">
+                <div class="hud-label">
+                    <i class="fas fa-chart-line"></i>
+                    <span>LEVEL</span>
+                </div>
+                <div class="hud-value" id="level">1</div>
+            </div>
+            
+            <div class="hud-card">
+                <div class="hud-label">
+                    <i class="fas fa-crosshairs"></i>
+                    <span>ACCURACY</span>
+                </div>
+                <div class="hud-value" id="accuracy">0%</div>
+            </div>
+        </div>
+
+        <!-- Game Arena -->
+        <div class="game-arena" id="gameArea">
+            <!-- Background Range Lines -->
+            <div class="range-line"></div>
+            <div class="range-line"></div>
+            <div class="range-line"></div>
+            
+            <!-- Bow (Left Side) -->
+            <div class="bow-container" id="bowContainer">
+                <div class="bow" id="bow">
+                    <div class="bow-riser"></div>
+                    <div class="bow-limb left"></div>
+                    <div class="bow-limb right"></div>
+                    <div class="bow-string"></div>
+                </div>
+            </div>
+
+            <!-- Target (Right Side, Moves) -->
+            <div class="target-container" id="targetContainer">
+                <div class="target" id="target">
+                    <div class="target-ring outer"></div>
+                    <div class="target-ring middle"></div>
+                    <div class="target-ring inner"></div>
+                    <div class="bullseye"></div>
+                </div>
+            </div>
+
+            <!-- Arrows will be injected here -->
+            <div class="arrows-container" id="arrowsContainer"></div>
+        </div>
+
+        <!-- Controls Footer -->
+        <footer class="game-footer">
+            <div class="instructions">
+                <div class="instruction-item">
+                    <span class="key-hint">CLICK</span>
+                    <span>or</span>
+                    <span class="key-hint">SPACE</span>
+                    <span>to shoot arrow</span>
+                </div>
+                <div class="instruction-item">
+                    <span>Hit the moving target to score points</span>
+                </div>
+            </div>
+            
+            <div class="difficulty-meter">
+                <div class="meter-label">DIFFICULTY</div>
+                <div class="meter-bar">
+                    <div class="meter-fill" id="difficultyBar"></div>
+                </div>
+                <div class="meter-steps">
+                    <span>Level 1</span>
+                    <span>Level 2</span>
+                    <span>Level 3</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="ai_script.js"></script>
+</body>
+</html>
