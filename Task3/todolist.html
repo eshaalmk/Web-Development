@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Get hands on with JavaScript’s Fetch API (Axios version)</h1>
+<p>Write your requests in the script and watch the console and network logs.</p>
+
+<!-- 1️⃣ Include Axios CDN -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script>
+// GET retrieve all to-do’s
+axios.get('https://jsonplaceholder.typicode.com/todos')
+  .then(response => console.log(response.data))
+  .catch(error => console.error(error));
+
+// GET retrieves the to-do with specific URI (id = 5)
+axios.get('https://jsonplaceholder.typicode.com/todos/5')
+  .then(response => console.log(response.data))
+  .catch(error => console.error(error));
+
+// POST adds a random id to the object sent
+axios.post('https://jsonplaceholder.typicode.com/todos', {
+  userId: 1,
+  title: "clean room",
+  completed: false
+})
+.then(response => console.log(response.data))
+.catch(error => console.error(error));
+</script>
+
+</body>
+</html>

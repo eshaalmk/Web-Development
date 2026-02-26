@@ -8,7 +8,7 @@ body {
 /* Header */
 header {
   background-color: white;
-  padding: 10px;
+  padding: 15px;
   text-align: center;
 }
 
@@ -21,6 +21,22 @@ header h1 {
   margin: 5px 0;
 }
 
+button {
+  background-color: blue;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+button:hover {
+  background-color: darkblue;
+  transform: scale(1.05);
+}
+
+/* Navigation */
 nav {
   background-color: #ddd;
   padding: 10px;
@@ -41,42 +57,29 @@ nav a.active {
   border-radius: 5px;
 }
 
-
 /* Gallery */
 .gallery {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 15px;
   padding: 20px;
 }
 
-.gallery div {
+.art-item {
   background-color: white;
   padding: 10px;
+  text-align: center;
 }
 
-.gallery img {
+.art-item img {
   width: 200px;
   height: 250px;
+  object-fit: cover;
 }
 
-/* Forms */
-form {
-  background-color: white;
-  width: 300px;
-  margin: 20px auto;
-  padding: 15px;
-}
-
-input, textarea {
-  width: 100%;
-  margin-bottom: 10px;
-  padding: 5px;
-}
-
+/* Sections */
 section {
   padding: 40px 20px;
-  background-color: plum;
 }
 
 section h2 {
@@ -90,6 +93,21 @@ section h2 {
   margin: auto;
 }
 
+/* Forms */
+form {
+  background-color: white;
+  width: 300px;
+  margin: 20px auto;
+  padding: 15px;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 6px;
+}
 
 /* Footer */
 footer {
@@ -104,3 +122,28 @@ footer i {
 }
 
 
+@media (max-width: 768px) {
+
+  nav a {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .art-item img {
+    width: 100%;
+    height: auto;
+  }
+
+  form {
+    width: 90%;
+  }
+
+  header h1 {
+    font-size: 24px;
+  }
+}

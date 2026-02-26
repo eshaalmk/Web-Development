@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Art Gallery</title>
   <meta name="description" content="The modern and exquisite art gallery">
   <meta name="author" content="Eshaal Malik">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="stylesheet" href="Task1.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-
 
 <body>
 
@@ -19,98 +19,89 @@
   <p>Modern & Exquisite Art</p>
 </header>
 
-<!-- Nav bar -->
-
 <nav>
-  <a href="#home">Home</a>
+  <a href="#home" class="active">Home</a>
   <a href="#about">About</a>
   <a href="#signup">Sign Up</a>
   <a href="#login">Login</a>
   <a href="#feedback">Feedback</a>
 </nav>
 
-<!-- Home and gallery -->
 <section id="home">
   <h2>Gallery</h2>
 
   <div class="gallery">
-    <div>
-      <img src="p1.jpg">
+    <div class="art-item">
+      <img src="p1.jpg" alt="Artwork 1">
       <p>Artwork 1</p>
     </div>
 
-    <div>
-      <img src="p2.jpg">
+    <div class="art-item">
+      <img src="p2.jpg" alt="Artwork 2">
       <p>Artwork 2</p>
     </div>
 
-    <div>
-      <img src="p3.jpg">
+    <div class="art-item">
+      <img src="p3.jpg" alt="Artwork 3">
       <p>Artwork 3</p>
     </div>
   </div>
 </section>
 
-<!-- About -->
 <section id="about">
   <h2>About the Gallery</h2>
 
   <p class="text-center">
-    The Art Gallery is a creative space dedicated to showcasing modern and exquisite artwork from artists who express their ideas through different styles and techniques. Our gallery was created to give visitors a place where they can explore, appreciate, and connect with art in a calm and inspiring environment. We believe that art is a powerful form of expression that tells stories, shares emotions, and reflects culture and creativity. This gallery features a collection of portraits, landscapes, and abstract pieces that highlight imagination and artistic skill. Whether you are an art lover, a student, or someone simply curious about creative work, the Art Gallery welcomes everyone. Our goal is to make art accessible and enjoyable while encouraging creativity and appreciation for visual expression.
+    The Art Gallery is a creative space dedicated to showcasing modern and exquisite artwork from artists who express their ideas through different styles and techniques...
   </p>
 </section>
 
-<!-- Sign Up -->
 <section id="signup">
   <h2>Sign Up</h2>
 
   <form>
-    <input type="text" placeholder="Name">
-    <input type="email" placeholder="Email">
-    <input type="password" placeholder="Password">
+    <input type="text" placeholder="Name" required>
+    <input type="email" placeholder="Email" required>
+    <input type="password" placeholder="Password" required>
     <input type="submit" value="Create Account">
   </form>
 </section>
 
-<!-- Login -->
 <section id="login">
   <h2>Login</h2>
 
   <form>
-    <input type="email" placeholder="Email">
-    <input type="password" placeholder="Password">
+    <input type="email" placeholder="Email" required>
+    <input type="password" placeholder="Password" required>
     <input type="submit" value="Login">
   </form>
 </section>
 
-<!-- Feedback -->
 <section id="feedback">
   <h2>Feedback</h2>
 
   <form>
-    <input type="text" placeholder="Your Name">
+    <input type="text" placeholder="Your Name" required>
 
-    <label>Type of Feedback</label>
-    <select>
-      <option>-- Select --</option>
+    <label for="feedback-type">Type of Feedback</label>
+    <select id="feedback-type" required>
+      <option value="">-- Select --</option>
       <option>Compliment</option>
       <option>Suggestion</option>
       <option>Problem</option>
     </select>
 
-    <textarea placeholder="Your feedback here..."></textarea>
+    <textarea placeholder="Your feedback here..." required></textarea>
     <input type="submit" value="Submit Feedback">
   </form>
 </section>
 
-<!-- Footer -->
 <footer>
   <p>
     <i class="fa-solid fa-palette"></i>
     © 2026 Art Gallery
   </p>
 </footer>
-
 
 </body>
 </html>
