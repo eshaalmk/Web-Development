@@ -3,17 +3,13 @@
 const authMiddleware = (req, res, next) => {
 
   // Check if session exists
-  if (req.session.user) {
-
-    // Allow access
-    next();
-
-  } else {
-
-    res.status(401).send("Access Denied. Please login first.");
-
+  if (!req.session.user) {
+    return res.status(401).json({
+      message: "Unauthorized. Please login first."
+    });
   }
 
+  next();
 };
 
 module.exports = authMiddleware;

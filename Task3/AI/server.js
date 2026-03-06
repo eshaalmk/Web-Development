@@ -1,46 +1,34 @@
-// Import express
 const express = require("express");
-
-// Import session
 const session = require("express-session");
+const mongoose = require("mongoose");
 
-// Import body-parser
-const bodyParser = require("body-parser");
-
-// Import DB connection
 const connectDB = require("./config/db");
-
-// Import routes
 const authRoutes = require("./routes/authRoutes");
 
 const app = express();
 
-
-// Connect MongoDB
+// Connect DB
 connectDB();
 
-
 // Middleware
-app.use(bodyParser.json());
-
+app.use(express.json());
 
 // Session setup
 app.use(session({
-
-  secret: "secretKey",
+  secret: "superSecretKey",
   resave: false,
-  saveUninitialized: true
-
+  saveUninitialized: false
 }));
-
 
 // Routes
 app.use("/", authRoutes);
 
+// Home route
+app.get("/", (req, res) => {
+  res.send("AI Login System Running");
+});
 
 // Start server
 app.listen(3000, () => {
-
-  console.log("Server running on port 3000");
-
+  console.log("Server started on port 3000");
 });

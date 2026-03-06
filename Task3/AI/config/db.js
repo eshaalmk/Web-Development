@@ -1,22 +1,21 @@
 // Import mongoose
 const mongoose = require("mongoose");
 
-// Function to connect MongoDB
+// Connect to MongoDB using async function
 const connectDB = async () => {
   try {
 
-    // Connect to MongoDB database studentDB
-    await mongoose.connect("mongodb://localhost:27017/studentDB");
+    // Database connection
+    await mongoose.connect("mongodb://127.0.0.1:27017/studentDB");
 
-    console.log("MongoDB Connected Successfully");
+    console.log("MongoDB connected successfully");
 
   } catch (error) {
 
-    console.error("MongoDB Connection Error:", error);
+    console.error("Database connection failed:", error.message);
     process.exit(1);
 
   }
 };
 
-// Export the function
 module.exports = connectDB;

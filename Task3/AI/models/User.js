@@ -1,17 +1,16 @@
-// Import mongoose
 const mongoose = require("mongoose");
+const bcrypt = require("bcrypt");
 
-// Create schema for user collection
+// Schema for users collection
 const userSchema = new mongoose.Schema({
 
-  // username field
   username: {
     type: String,
     required: true,
-    unique: true
+    unique: true,
+    trim: true
   },
 
-  // password field
   password: {
     type: String,
     required: true
@@ -19,72 +18,63 @@ const userSchema = new mongoose.Schema({
 
 });
 
-// Create mongoose model
+// Create model
 const UserModel = mongoose.model("User", userSchema);
 
 
-// Create User class as required in assignment
+// AI Version User Class
 class User {
 
-  // constructor runs when object is created
   constructor(username, password) {
-
     this.username = username;
     this.password = password;
-
   }
 
-  // Register method
+  // REGISTER METHOD
   async register() {
 
-    try {
+    // Check if user already exists
+    const existingUser = await UserModel.findOne({ username: this.username });
 
-      // Create new user document
-      const newUser = new UserModel({
-        username: this.username,
-        password: this.password
-      });
-
-      // Save user to MongoDB
-      await newUser.save();
-
-      return "User registered successfully";
-
-    } catch (error) {
-
-      throw new Error("Registration failed");
-
+    if (existingUser) {
+      throw new Error("Username already exists");
     }
 
+    // Hash password
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(this.password, salt);
+
+    // Create new user
+    const user = new UserModel({
+      username: this.username,
+      password: hashedPassword
+    });
+
+    await user.save();
+
+    return "User registered successfully";
   }
 
-  // Login method
+  // LOGIN METHOD
   async login() {
 
-    try {
+    const user = await UserModel.findOne({ username: this.username });
 
-      // Find user in database
-      const user = await UserModel.findOne({
-        username: this.username,
-        password: this.password
-      });
-
-      // If user exists return true
-      if (user) {
-        return user;
-      }
-
+    if (!user) {
       return null;
-
-    } catch (error) {
-
-      throw new Error("Login failed");
-
     }
+
+    // Compare password
+    const match = await bcrypt.compare(this.password, user.password);
+
+    if (!match) {
+      return null;
+    }
+
+    return user;
 
   }
 
 }
 
-// Export class
 module.exports = User;

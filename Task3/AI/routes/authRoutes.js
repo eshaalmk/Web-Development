@@ -1,29 +1,37 @@
 const express = require("express");
 const router = express.Router();
 
-// Import User class
 const User = require("../models/User");
-
-// Import middleware
 const authMiddleware = require("../middleware/authMiddleware");
 
 
-// REGISTER ROUTE
+// REGISTER
 router.post("/register", async (req, res) => {
 
-  const { username, password } = req.body;
-
-  const user = new User(username, password);
-
   try {
+
+    const { username, password } = req.body;
+
+    // Validate input
+    if (!username || !password) {
+      return res.status(400).json({
+        message: "Username and password are required"
+      });
+    }
+
+    const user = new User(username, password);
 
     const result = await user.register();
 
-    res.send(result);
+    res.json({
+      message: result
+    });
 
   } catch (error) {
 
-    res.status(500).send(error.message);
+    res.status(500).json({
+      error: error.message
+    });
 
   }
 
@@ -31,33 +39,36 @@ router.post("/register", async (req, res) => {
 
 
 
-// LOGIN ROUTE
+// LOGIN
 router.post("/login", async (req, res) => {
-
-  const { username, password } = req.body;
-
-  const user = new User(username, password);
 
   try {
 
+    const { username, password } = req.body;
+
+    const user = new User(username, password);
+
     const result = await user.login();
 
-    if (result) {
-
-      // create session
-      req.session.user = result.username;
-
-      res.send("Login successful");
-
-    } else {
-
-      res.status(401).send("Invalid username or password");
-
+    if (!result) {
+      return res.status(401).json({
+        message: "Invalid username or password"
+      });
     }
+
+    // Create session
+    req.session.user = result.username;
+
+    res.json({
+      message: "Login successful",
+      user: result.username
+    });
 
   } catch (error) {
 
-    res.status(500).send(error.message);
+    res.status(500).json({
+      error: error.message
+    });
 
   }
 
@@ -65,21 +76,27 @@ router.post("/login", async (req, res) => {
 
 
 
-// DASHBOARD ROUTE (PROTECTED)
+// DASHBOARD
 router.get("/dashboard", authMiddleware, (req, res) => {
 
-  res.send(`Welcome ${req.session.user}`);
+  res.json({
+    message: `Welcome ${req.session.user}`
+  });
 
 });
 
 
 
-// LOGOUT ROUTE
+// LOGOUT
 router.get("/logout", (req, res) => {
 
-  req.session.destroy();
+  req.session.destroy(() => {
 
-  res.send("Logout successful");
+    res.json({
+      message: "Logout successful"
+    });
+
+  });
 
 });
 
