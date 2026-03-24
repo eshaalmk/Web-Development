@@ -1,0 +1,102 @@
+/* ─── SCOREBOARD ──────────────────────────────────────────── */
+.scoreboard {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  gap: 0 18px;
+  align-items: center;
+  padding: 10px 18px;
+  background: rgba(0, 0, 0, 0.82);
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.scoreboard-main {
+  display: flex;
+  align-items: baseline;
+  gap: 3px;
+}
+
+.scoreboard-runs {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 44px;
+  font-weight: 900;
+  color: #f1c40f;
+  text-shadow: 0 2px 18px rgba(241,196,15,0.55);
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.scoreboard-sep {
+  color: rgba(255,255,255,0.35);
+  font-size: 24px;
+  font-weight: 700;
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
+.scoreboard-wickets {
+  color: rgba(255,255,255,0.5);
+  font-size: 24px;
+  font-weight: 700;
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
+/* Wicket pips */
+.scoreboard-pips {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.scoreboard-pip {
+  width: 13px;
+  height: 28px;
+  border-radius: 3px;
+  background: rgba(255,255,255,0.13);
+  transition: all 0.4s ease;
+}
+
+.scoreboard-pip-out {
+  background: #e74c3c;
+  box-shadow: 0 0 10px rgba(231, 76, 60, 0.55);
+}
+
+.scoreboard-pip-label {
+  color: rgba(255,255,255,0.28);
+  font-size: 9px;
+  letter-spacing: 1px;
+  margin-left: 3px;
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
+/* Individual stats */
+.scoreboard-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.scoreboard-stat-val {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.scoreboard-stat-overs { color: #3498db; }
+.scoreboard-stat-sr    { color: #2ecc71; }
+
+.scoreboard-stat-key {
+  font-size: 8px;
+  letter-spacing: 1.5px;
+  color: rgba(255,255,255,0.3);
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
+/* ─── RESPONSIVE ──────────────────────────────────────────── */
+@media (max-width: 420px) {
+  .scoreboard {
+    gap: 0 10px;
+    padding: 8px 12px;
+  }
+  .scoreboard-runs { font-size: 36px; }
+}

@@ -1,0 +1,208 @@
+/* ─── GAME LAYOUT WRAPPER ─────────────────────────────────── */
+.game-layout {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-dark);
+  max-width: 720px;
+  margin: 0 auto;
+  box-shadow: 0 0 80px rgba(0, 0, 0, 0.9);
+}
+
+/* ─── CANVAS CONTAINER ────────────────────────────────────── */
+.game-canvas-container {
+  flex: 1 0 260px;
+  max-height: 340px;
+  background: #0b180b;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ─── COMMENTARY STRIP ────────────────────────────────────── */
+.game-commentary {
+  min-height: 40px;
+  background: var(--bg-panel);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 20px;
+}
+
+.game-commentary p {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-style: italic;
+  text-align: center;
+  transition: color 0.4s ease;
+}
+
+.game-commentary-idle    { color: var(--text-muted); }
+.game-commentary-normal  { color: rgba(255,255,255,0.65); }
+.game-commentary-boundary { color: var(--gold); }
+.game-commentary-wicket  { color: var(--red); }
+
+/* ─── CONTROLS PANEL ──────────────────────────────────────── */
+.game-controls {
+  background: rgba(0, 0, 0, 0.92);
+  border-top: 1px solid var(--border);
+  padding: 14px 16px 24px;
+}
+
+/* ─── STYLE TOGGLE ────────────────────────────────────────── */
+.style-toggle {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.style-btn {
+  flex: 1;
+  padding: 9px 0;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.03);
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  transition: all 0.22s ease;
+}
+
+.style-btn-active {
+  border-color: var(--accent, #fff);
+  background: color-mix(in srgb, var(--accent, #fff) 14%, transparent);
+  color: var(--accent, #fff);
+  box-shadow: 0 0 16px color-mix(in srgb, var(--accent, #fff) 30%, transparent);
+}
+
+.style-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ─── POWER BAR HEADER ────────────────────────────────────── */
+.powerbar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 7px;
+}
+
+.powerbar-header-label {
+  font-size: 10px;
+  color: var(--text-muted);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: var(--font-display);
+}
+
+.powerbar-header-pos {
+  font-size: 10px;
+  color: rgba(255,255,255,0.2);
+  font-family: monospace;
+}
+
+/* ─── BALL PIPS ───────────────────────────────────────────── */
+.ball-pips {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  margin: 14px 0;
+}
+
+.ball-pip {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  transition: all 0.35s ease;
+}
+
+.ball-pip-remaining {
+  background: var(--gold);
+  box-shadow: 0 0 6px rgba(241,196,15,0.6);
+}
+
+.ball-pip-bowled {
+  background: rgba(255,255,255,0.1);
+  box-shadow: none;
+}
+
+/* ─── PLAY SHOT BUTTON ────────────────────────────────────── */
+.play-btn {
+  width: 100%;
+  padding: 16px 0;
+  border-radius: var(--radius-md);
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.play-btn-ready {
+  background: linear-gradient(135deg, var(--btn-color, #ff4d4d) 0%, #c0392b 100%);
+  color: white;
+  box-shadow: 0 6px 26px color-mix(in srgb, var(--btn-color, #ff4d4d) 50%, transparent);
+  text-shadow: 0 1px 6px rgba(0,0,0,0.5);
+}
+
+.play-btn-ready::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 50%;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.12), transparent);
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  pointer-events: none;
+}
+
+.play-btn-ready:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 36px color-mix(in srgb, var(--btn-color, #ff4d4d) 65%, transparent);
+}
+
+.play-btn-disabled {
+  background: rgba(255,255,255,0.05);
+  color: rgba(255,255,255,0.2);
+  cursor: not-allowed;
+  transform: scale(0.98);
+}
+
+.play-btn-footer {
+  text-align: center;
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-top: 8px;
+  letter-spacing: 1px;
+}
+
+/* ─── RESTART BUTTON ──────────────────────────────────────── */
+.restart-btn {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  padding: 5px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+}
+
+.restart-btn:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+/* ─── RESPONSIVE ──────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .game-canvas-container {
+    max-height: 260px;
+  }
+  .play-btn {
+    font-size: 17px;
+    padding: 14px 0;
+  }
+}

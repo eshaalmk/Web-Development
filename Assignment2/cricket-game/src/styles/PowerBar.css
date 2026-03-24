@@ -1,0 +1,122 @@
+/* ─── POWER BAR ───────────────────────────────────────────── */
+.powerbar-wrapper {
+  width: 100%;
+  padding: 0 2px;
+  user-select: none;
+}
+
+.powerbar-track {
+  position: relative;
+  height: 50px;
+  border-radius: 10px;
+  overflow: visible;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.45);
+  transition: box-shadow 0.3s ease;
+  display: flex;        /* segments sit side-by-side */
+  clip-path: inset(0 0 0 0 round 8px); /* clips segments to rounded corners */
+}
+
+.powerbar-active {
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.22), 0 6px 26px rgba(0,0,0,0.5);
+}
+
+/* Outer border overlay sits above segments */
+.powerbar-track::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.12);
+  pointer-events: none;
+  z-index: 3;
+}
+
+.powerbar-segment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: filter 0.3s ease;
+}
+
+.powerbar-gloss {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 55%;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.2), transparent);
+  pointer-events: none;
+}
+
+.powerbar-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  color: rgba(255,255,255,0.95);
+  text-shadow: 0 1px 5px rgba(0,0,0,0.85);
+  letter-spacing: 0.3px;
+  position: relative;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ─── SLIDER MARKER ───────────────────────────────────────── */
+.powerbar-slider {
+  position: absolute;
+  top: -9px;
+  transform: translateX(-50%);
+  width: 5px;
+  height: 68px;
+  border-radius: 3px;
+  background: white;
+  z-index: 10;
+  pointer-events: none;
+  transition: box-shadow 0.3s ease;
+  box-shadow: 0 0 10px rgba(255,255,255,0.4);
+}
+
+.powerbar-slider-glow {
+  box-shadow:
+    0 0 0 2px rgba(255,255,255,0.5),
+    0 0 24px rgba(255,255,255,0.9),
+    0 0 4px rgba(0,0,0,0.5);
+}
+
+.powerbar-arrow {
+  position: absolute;
+  top: -24px;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 11px solid white;
+  filter: drop-shadow(0 2px 5px rgba(0,0,0,0.6));
+  z-index: 11;
+  pointer-events: none;
+}
+
+/* ─── SCALE BENEATH BAR ───────────────────────────────────── */
+.powerbar-scale {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.powerbar-scale-tick {
+  text-align: center;
+  font-size: 9px;
+  color: rgba(255,255,255,0.35);
+  flex-shrink: 0;
+  overflow: hidden;
+  font-family: monospace;
+}
+
+.powerbar-scale-end {
+  font-size: 9px;
+  color: rgba(255,255,255,0.35);
+  font-family: monospace;
+  white-space: nowrap;
+}
