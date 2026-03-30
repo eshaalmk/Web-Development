@@ -1,6 +1,6 @@
 function About() {
   return (
-    <div>
+    <div className="card">
       <h2>About Page</h2>
       <p>This app shows how to use React Router.</p>
       <p>It has Home, About, and Contact pages.</p>
